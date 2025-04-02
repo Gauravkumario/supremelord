@@ -1,56 +1,60 @@
-import { useState } from 'react';
-import { signIn, useSession } from 'next-auth/react';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
-import Image from 'next/image';
-import { useTheme } from '../contexts/ThemeContext';
+import { useState } from "react";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import Head from "next/head";
+import Image from "next/image";
+import { useTheme } from "../contexts/ThemeContext";
+import Link from "next/link";
 
 export default function Login() {
   const router = useRouter();
   const { data: session, status } = useSession();
   const { darkMode } = useTheme();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   // If user is already logged in, redirect to admin dashboard
-  if (status === 'authenticated') {
-    router.push('/admin');
+  if (status === "authenticated") {
+    router.push("/admin");
     return null;
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
     setIsLoading(true);
 
     try {
-      const result = await signIn('credentials', {
+      const result = await signIn("credentials", {
         redirect: false,
         username,
         password,
       });
 
       if (result.error) {
-        setError('Invalid username or password');
+        setError("Invalid username or password");
         setIsLoading(false);
       } else {
         // Redirect will be handled by the useSession hook
-        router.push('/admin');
+        router.push("/admin");
       }
     } catch (error) {
-      console.error('Login error:', error);
-      setError('An error occurred during login. Please try again.');
+      console.error("Login error:", error);
+      setError("An error occurred during login. Please try again.");
       setIsLoading(false);
     }
   };
 
   return (
-    <div className={`login-page ${darkMode ? 'dark-theme' : 'light-theme'}`}>
+    <div className={`login-page ${darkMode ? "dark-theme" : "light-theme"}`}>
       <Head>
         <title>Login | Developer Portfolio</title>
-        <meta name="description" content="Login to manage your developer portfolio" />
+        <meta
+          name="description"
+          content="Login to manage your developer portfolio"
+        />
       </Head>
 
       <div className="login-container">
@@ -64,7 +68,16 @@ export default function Login() {
 
         {error && (
           <div className="error-message">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="12" y1="8" x2="12" y2="12"></line>
               <line x1="12" y1="16" x2="12.01" y2="16"></line>
@@ -101,33 +114,47 @@ export default function Login() {
           </div>
 
           <div className="login-hint">
-            <p>Default credentials: username: <strong>admin</strong>, password: <strong>admin123</strong></p>
+            <p>
+              Default credentials: username: <strong>admin</strong>, password:{" "}
+              <strong>admin123</strong>
+            </p>
           </div>
 
-          <button
-            type="submit"
-            className="login-button"
-            disabled={isLoading}
-          >
+          <button type="submit" className="login-button" disabled={isLoading}>
             {isLoading ? (
               <>
                 <span className="spinner"></span>
                 Logging in...
               </>
             ) : (
-              'Login'
+              "Login"
             )}
           </button>
         </form>
 
         <div className="back-link">
-          <a href="/" onClick={(e) => { e.preventDefault(); router.push('/'); }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <Link
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              router.push("/");
+            }}
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <line x1="19" y1="12" x2="5" y2="12"></line>
               <polyline points="12 19 5 12 12 5"></polyline>
             </svg>
             Back to Home
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -243,7 +270,9 @@ export default function Login() {
         }
 
         @keyframes spin {
-          to { transform: rotate(360deg); }
+          to {
+            transform: rotate(360deg);
+          }
         }
 
         .error-message {
