@@ -37,7 +37,7 @@ export default function Home({ initialProjects, profile }) {
       <section className={styles.heroSection}>
         <div className={styles.heroContent}>
           <Image
-            src={profile.profileImage || "/default-avatar.svg"}
+            src={profile.profileImage || "/public/default-avatar.svg"}
             alt={profile.name}
             className={styles.profileImage}
             width={150}
