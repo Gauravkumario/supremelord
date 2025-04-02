@@ -1,0 +1,83 @@
+[
+  {
+    "id": "1742909895296",
+    "title": "Project number 1",
+    "image": "/uploads/1743358823428-1000005065.jpg",
+    "description": "Implement analytics for portfolio visitors\nCreate customizable theme options beyond just dark/light modeImplement analytics for portfolio visitors\nCreate customizable theme options beyond just dark/light modeImplement analytics for portfolio visitors\nCreate customizable theme options beyond just dark/light modeImplement analytics for portfolio visitors\nCreate customizable theme options beyond just dark/light modeImplement analytics for portfolio visitors\nCreate customizable theme options beyond just dark/light mode",
+    "techStack": [
+      "react",
+      "nextjs",
+      "html",
+      "css",
+      "javascript",
+      "sql"
+    ],
+    "status": "Completed",
+    "liveUrl": "https://in.pinterest.com/homefeed/",
+    "githubUrl": "https://in.pinterest.com/homefeed/"
+  },
+  {
+    "id": "1743299343148",
+    "title": "project 3",
+    "image": "/uploads/1743299335866-a1.jpg",
+    "techStack": [
+      "react",
+      "nextjs",
+      "html",
+      "css",
+      "javascript",
+      "sql"
+    ],
+    "status": "In Progress",
+    "liveUrl": "https://in.pinterest.com/homefeed/",
+    "githubUrl": "https://github.com/example/ecommerce"
+  },
+  {
+    "id": "1743299974934",
+    "title": "project 4",
+    "image": "/uploads/1743299953165-f1.jpg",
+    "techStack": [
+      "react",
+      "nextjs",
+      "html",
+      "css",
+      "javascript",
+      "sql"
+    ],
+    "status": "Planned",
+    "liveUrl": "https://in.pinterest.com/homefeed/",
+    "githubUrl": "https://github.com/example/ecommerce"
+  },
+  {
+    "id": "1743358626156",
+    "title": "Project 5",
+    "image": "/uploads/1743358543619-1000006856.jpg",
+    "techStack": [
+      "React",
+      "node",
+      "html",
+      "Javascript",
+      "css",
+      "tailwind"
+    ],
+    "status": "Completed",
+    "liveUrl": "https://supremelord.netlify.app/admin",
+    "githubUrl": "https://supremelord.netlify.app/admin"
+  },
+  {
+    "id": "1743617294684",
+    "title": "project 5",
+    "image": "/uploads/1743617272690-b2.jpg",
+    "techStack": [
+      "react",
+      "nextjs",
+      "html",
+      "css",
+      "javascript",
+      "sql"
+    ],
+    "status": "Planned",
+    "liveUrl": "https://in.pinterest.com/homefeed/",
+    "githubUrl": "https://in.pinterest.com/homefeed/"
+  }
+]
